@@ -50,9 +50,7 @@ Reach handles everything else — browser automation, scraping, composing, and s
 
 ---
 
-## 🎬 Demo
 
-> 📹 **[Watch Full Demo Video →](INSERT_GOOGLE_DRIVE_LINK_HERE)**
 
 ---
 
@@ -102,19 +100,32 @@ Reach handles everything else — browser automation, scraping, composing, and s
 ## 📁 Project Structure
 
 ```
-reach/
+LINKEDIN_PROJECT/
 │
-├── client/                        # ⚛️  React Frontend
-│   └── src/
-│       ├── App.jsx                # Main UI — form, state, status
-│       ├── App.css                # Glassmorphism dark theme styles
-│       └── index.css              # Global CSS variables & resets
+├── Backend/                       # 🖥️  Node.js Backend
+│   ├── node_modules/
+│   ├── uploads/                   # Temp resume storage (Multer)
+│   ├── .env
+│   ├── debug_login.png            # Auto-saved on login failure
+│   ├── debug_password.png         # Auto-saved on password failure
+│   ├── linkedin.js                # Puppeteer automation engine
+│   ├── mailer.js                  # Nodemailer email sender
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js                  # Express routes + Multer config
 │
-└── server/                        # 🖥️  Node.js Backend
-    ├── server.js                  # Express routes + Multer config
-    ├── linkedin.js                # Puppeteer automation engine
-    ├── mailer.js                  # Nodemailer email sender
-    └── uploads/                   # Temp resume storage
+└── frontend/                      # ⚛️  React Frontend
+    └── client/
+        ├── node_modules/
+        ├── public/
+        ├── src/                   # App.jsx, App.css, index.css
+        ├── .gitignore
+        ├── eslint.config.js
+        ├── index.html
+        ├── package-lock.json
+        ├── package.json
+        ├── README.md
+        └── vite.config.js
 ```
 
 ---
@@ -131,15 +142,15 @@ reach/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/reach.git
-cd reach
+git clone https://github.com/YOUR_USERNAME/linkedin-project.git
+cd LINKEDIN_PROJECT
 
 # 2. Install backend dependencies
-cd server
+cd Backend
 npm install
 
 # 3. Install frontend dependencies
-cd ../client
+cd ../frontend/client
 npm install
 ```
 
@@ -147,17 +158,17 @@ npm install
 
 ```bash
 # Terminal 1 — Backend
-cd server
+cd Backend
 node server.js
 # ✓ Server running at http://localhost:3000
 
 # Terminal 2 — Frontend
-cd client
+cd frontend/client
 npm run dev
 # ✓ Open http://localhost:5173
 ```
 
----
+
 
 ## 🔑 Google App Password Setup
 
