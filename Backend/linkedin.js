@@ -7,7 +7,7 @@ const LINKEDIN_PASSWORD = process.env.LINKEDIN_PASSWORD;
 
 async function linkedinLogin(keyword, gmail, appPassword, resumePath) {
   const browser = await puppeteer.launch({
-    headless: false,
+    
     defaultViewport: null,
     slowMo: 20,
     args: [
